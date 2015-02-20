@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="en-IN" />
+  <App xmlns="" ProductID="{209681c2-4573-4b2a-809a-474fab0ee821}" Title="TECHTRICKS8694" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="" Description="Its a app for the technical blog TECHTRICKS8694 , you fill all the articles of the blog presented to you right here on your phone without having any need to open browser and going to the website , you find amazing content here , all the technical news and" Publisher="" PublisherID="{e7d94c95-4681-45a0-a8b4-5df4e482fb9e}">
+    <IconPath IsRelative="true" IsResource="false">Images\Logo-1ea99746-061b-4dec-a7fe-1eee87957505.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
+      <Capability Name="ID_CAP_PHONEDIALER" />
+      <Capability Name="ID_CAP_LOCATION" />
+      <Capability Name="ID_CAP_PROXIMITY" />
+      <Capability Name="ID_CAP_IDENTITY_USER" />
+      <Capability Name="ID_CAP_MAP" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="View/BLOGPOSTS_News.xaml" ActivationPolicy="Resume" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="MyDoWapp" TaskName="_default">
+        <TemplateFlip>
+          <SmallImageURI IsRelative="true" IsResource="false">Images/Logo-1ea99746-061b-4dec-a7fe-1eee87957505.png</SmallImageURI>
+          <Count>0</Count>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Images/Logo-1ea99746-061b-4dec-a7fe-1eee87957505.png</BackgroundImageURI>
+          <Title>TECHTRICKS8694</Title>
+          <BackContent></BackContent>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false">Images/Tileback-33272900-e29c-42ba-babf-5550e0dcb5f4.png</BackBackgroundImageURI>
+          <BackTitle>TECHTRICKS8694</BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Images/Logo-1ea99746-061b-4dec-a7fe-1eee87957505.png</LargeBackgroundImageURI>
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">Images/Tileback-33272900-e29c-42ba-babf-5550e0dcb5f4.png</LargeBackBackgroundImageURI>
+          <DeviceLockImageURI IsRelative="true" IsResource="false"></DeviceLockImageURI>
+          <HasLarge>True</HasLarge>
+        </TemplateFlip>
+      </PrimaryToken>
+    </Tokens>
+    <Extensions>
+      <Extension ExtensionName="LockScreen_Notification_IconCount" ConsumerID="{111DFF24-AA15-4A96-8006-2BFF8122084F}" TaskID="_default" />
+      <Extension ExtensionName="LockScreen_Notification_TextField" ConsumerID="{111DFF24-AA15-4A96-8006-2BFF8122084F}" TaskID="_default" />
+      <Extension ExtensionName="LockScreen_Background" ConsumerID="{111DFF24-AA15-4A96-8006-2BFF8122084F}" TaskID="_default" />
+    </Extensions>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA" />
+      <ScreenResolution Name="ID_RESOLUTION_WXGA" />
+      <ScreenResolution Name="ID_RESOLUTION_HD720P" />
+    </ScreenResolutions>
+  </App>
+</Deployment>
+<!-- WPSDK Version 8.0.9900 -->

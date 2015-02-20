@@ -1,0 +1,172 @@
+<phone:PhoneApplicationPage 
+    x:Class="WPAppStudio.View.BLOGPOSTS_News"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ctl="clr-namespace:WPAppStudio.Controls"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:maps="clr-namespace:WPAppStudio.Controls.Maps"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:mytoolkit="clr-namespace:MyToolkit.Controls;assembly=MyToolkit.Extended"
+	xmlns:mytoolkitpaging="clr-namespace:MyToolkit.Paging;assembly=MyToolkit.Extended"
+	xmlns:ads="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource CustomApplicationTextBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+	DataContext="{Binding Path=BLOGPOSTS_NewsViewModel, Source={StaticResource ViewModelLocator}}">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <phone:PhoneApplicationPage.Resources>
+        
+		<mytoolkitpaging:BindableApplicationBar x:Key="PanoramaBLOGPOSTS_News0AppBar" IsVisible="True" IsMenuEnabled="True" Mode="Minimized" BackgroundColor="{StaticResource CustomApplicationAppBarBackgroundColor}" Opacity="0.99" ForegroundColor="White">
+			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaBLOGPOSTS_News0RefreshBtn" IconUri="/Images/Icons/Dark/Refresh.png" Text="{Binding Path=LocalizedResources.Refresh, Source={StaticResource LocalizedStrings}}" Command="{Binding RefreshBLOGPOSTS_NewsListControlCollectionCommand}"  />
+			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaBLOGPOSTS_News0SetLockScreenBtn" IconUri="/Images/Icons/Dark/SetLockScreen.png" Text="{Binding Path=LocalizedResources.SetLockScreen, Source={StaticResource LocalizedStrings}}" Command="{Binding SetLockScreenCommand}"  />
+			<mytoolkitpaging:BindableApplicationBar.MenuItems>
+				<mytoolkitpaging:BindableApplicationBarMenuItem x:Name="PanoramaBLOGPOSTS_News0AboutBtn" Text="{Binding Path=LocalizedResources.About, Source={StaticResource LocalizedStrings}}" Command="{Binding AboutCommand}"/>
+			</mytoolkitpaging:BindableApplicationBar.MenuItems>		
+		</mytoolkitpaging:BindableApplicationBar>	
+        
+		<mytoolkitpaging:BindableApplicationBar x:Key="PanoramaBLOGPOSTS_News2AppBar" IsVisible="True" IsMenuEnabled="True" Mode="Minimized" BackgroundColor="{StaticResource CustomApplicationAppBarBackgroundColor}" Opacity="0.99" ForegroundColor="White">
+			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaBLOGPOSTS_News2TextToSpeechBtn" IconUri="/Images/Icons/Dark/TextToSpeech.png" Text="{Binding Path=LocalizedResources.TextToSpeech, Source={StaticResource LocalizedStrings}}" Command="{Binding TextToSpeechABOUTUS_InfoHtmlControlCommand}"  />
+			<mytoolkitpaging:BindableApplicationBarIconButton x:Name="PanoramaBLOGPOSTS_News2PinToStartBtn" IconUri="/Images/Icons/Dark/PinToStart.png" Text="{Binding Path=LocalizedResources.PinToStart, Source={StaticResource LocalizedStrings}}" Command="{Binding PinToStartABOUTUS_InfoHtmlControlCommand}"  />
+			<mytoolkitpaging:BindableApplicationBar.MenuItems>
+				<mytoolkitpaging:BindableApplicationBarMenuItem x:Name="PanoramaBLOGPOSTS_News2ShareBtn" Text="{Binding Path=LocalizedResources.Share, Source={StaticResource LocalizedStrings}}" Command="{Binding ShareABOUTUS_InfoHtmlControlCommand}"/>
+			</mytoolkitpaging:BindableApplicationBar.MenuItems>		
+		</mytoolkitpaging:BindableApplicationBar>	
+        <ctl:MenuData x:Key="MenuSection_MenuMenuControlData">
+            <ctl:MenuItemData Title="BLOG LINK" TargetUrl="https://techtricks8694.blogspot.in" Image="/Images/Item-b2988906-c7bc-493a-a9f5-63a7fb870860.png"/>
+            <ctl:MenuItemData Title="BLOG FACEBOOK PAGE" TargetUrl="https://facebook.com/Techtricks8694" Image="/Images/Item-8d64b71d-37fb-4f8e-afab-eb2b3251ebc2.png"/>
+            <ctl:MenuItemData Title="BLOG FACEBOOK GROUP" TargetUrl="https://facebook.com/groups/tecktricks8694" Image="/Images/Item-fef57191-20ce-4109-8a3a-81a8615dbd49.png"/>
+            <ctl:MenuItemData Title="BLOG&apos;S TWITTER HANDLE" TargetUrl="https://twitter.com/techtricks8694" Image="/Images/Item-928f2a65-4e37-45b5-91e2-ab075ee11e57.png"/>
+       
+        </ctl:MenuData>
+    </phone:PhoneApplicationPage.Resources>
+    <Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Visibility="{Binding IsInternetAvailable}" Background="{StaticResource CustomApplicationAppBarBackgroundBrush}" Height="30">
+            <TextBlock Text="{Binding Path=LocalizedResources.NoConnection, Source={StaticResource LocalizedStrings}}" Foreground="White" Margin="10, 0"/>
+        </Grid>
+
+        <!--PLACE BELOW YOUR AdUnitId AND ApplicationId TO ENABLE ADS IN YOUR APPLICATION-->
+        <!--Image480_80 and test_client ARE DEMO VALUES-->
+        <!--<ads:AdControl Grid.Row="1" Height="80" Width="480"
+                      IsAutoCollapseEnabled="True"
+                      IsAutoRefreshEnabled="True"
+                      AdUnitId="Image480_80"
+                      ApplicationId="test_client"/>-->
+					  
+        <phone:Panorama x:Name="PanoramaBLOGPOSTS_News" Grid.Row="2" Foreground="{StaticResource CustomApplicationTextBrush}" Background="{StaticResource CustomApplicationBackgroundImage}" SelectionChanged="panoramaBLOGPOSTS_News_SelectionChanged">
+		    <phone:Panorama.Title>
+				<StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+					<Image Height="85" Width="85" Source="http://appstudiodata.blob.core.windows.net/apps/229465/209681c2-4573-4b2a-809a-474fab0ee821/res/Logo-1ea99746-061b-4dec-a7fe-1eee87957505.png" Stretch="Uniform" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5,0,10,5" RenderTransformOrigin="0.5,0.5" />
+					<TextBlock FontSize="92" Text="TECHTRICKS8694" FontFamily="Segoe WP Light" Foreground="{StaticResource CustomTitleApplicationTextBrush}" VerticalAlignment="Stretch"/>
+                </StackPanel>
+            </phone:Panorama.Title>
+			<phone:PanoramaItem x:Name="PanoramaBLOGPOSTS_News0" Margin="0,0,0,25">
+				<phone:PanoramaItem.Header>
+					<Grid MaxHeight="225" Margin="0,7,0,0">
+						<TextBlock Text="BLOG POSTS" FontSize="56" TextWrapping="Wrap" TextTrimming="WordEllipsis" Foreground="{StaticResource CustomApplicationTextBrush}"/>
+					</Grid>
+				</phone:PanoramaItem.Header>
+			<Grid>
+				<ProgressBar IsIndeterminate="True" Visibility="{Binding LoadingBLOGPOSTS_NewsListControlCollection, Converter={StaticResource VisibilityConverter}}" />
+				<ctl:LongListSelector x:Name="BLOGPOSTS_NewsListControl" 
+					ItemsSource="{Binding BLOGPOSTS_NewsListControlCollection}"
+					SelectedItem="{Binding SelectedBLOGPOSTS_NewsListControlCollection, Mode=TwoWay}"
+					PagingEnabled="False"
+					RefreshCommand="{Binding GetBLOGPOSTS_NewsListControlCollectionCommand}"
+					>
+                    <ctl:LongListSelector.ItemTemplate>
+                        <DataTemplate>
+							<Grid Margin="5" toolkit:TiltEffect.IsTiltEnabled="True">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="105"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition MaxHeight="80"/>
+								</Grid.RowDefinitions>
+								<Image Source="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter = 100, TargetNullValue={StaticResource DefaultNoImageValue}}" VerticalAlignment="Top" Stretch="UniformToFill" Width="100" MaxHeight="100" Margin="5,10,0,5" Grid.RowSpan="2"/>
+								<TextBlock TextWrapping="Wrap" FontSize="32" Foreground="{StaticResource CustomApplicationTextBrush}" 
+											Text="{Binding Title, Converter={StaticResource SanitizeString}}" Margin="10,0" Grid.Column="1" Grid.Row="0"/>
+								<TextBlock TextWrapping="Wrap" FontSize="18" Foreground="{StaticResource CustomApplicationTextBrush}"
+										TextTrimming="WordEllipsis" Text="{Binding Summary, Converter={StaticResource SanitizeString}}" Margin="10,0" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" Height="75"/>
+							</Grid>
+                        </DataTemplate>
+                    </ctl:LongListSelector.ItemTemplate>
+                </ctl:LongListSelector>
+			</Grid>
+            </phone:PanoramaItem>
+			<phone:PanoramaItem x:Name="PanoramaBLOGPOSTS_News1" >
+				<phone:PanoramaItem.Header>
+					<Grid MaxHeight="225" Margin="0,7,0,0">
+						<TextBlock Text="MenuSection" FontSize="56" TextWrapping="Wrap" TextTrimming="WordEllipsis" Foreground="{StaticResource CustomApplicationTextBrush}"/>
+					</Grid>
+				</phone:PanoramaItem.Header>
+				<ListBox x:Name="MenuSection_MenuMenuControl" 
+					ItemsSource="{StaticResource MenuSection_MenuMenuControlData}"
+					SelectedItem="{Binding SelectedMenuSection_MenuMenuControl, Mode=TwoWay}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+							<VirtualizingStackPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+						<Grid Margin="5" toolkit:TiltEffect.IsTiltEnabled="True">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="60"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+								<Image Source="{Binding Image}" Margin="5,0,0,5" Stretch="UniformToFill" />
+								<TextBlock Margin="10,0" FontSize="32" Foreground="{StaticResource CustomApplicationTextBrush}" 
+											VerticalAlignment="Center" Text="{Binding Title}" Grid.Column="1"/>
+						</Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </phone:PanoramaItem>
+			<phone:PanoramaItem x:Name="PanoramaBLOGPOSTS_News2" Margin="0,0,0,25">
+				<phone:PanoramaItem.Header>
+					<Grid MaxHeight="225" Margin="0,7,0,0">
+						<TextBlock Text="ABOUT US" FontSize="56" TextWrapping="Wrap" TextTrimming="WordEllipsis" Foreground="{StaticResource CustomApplicationTextBrush}"/>
+					</Grid>
+				</phone:PanoramaItem.Header>
+                    <ScrollViewer Margin="15,0">
+						<mytoolkit:FixedHtmlTextBlock 
+							FontSize="24" 
+							Foreground="{StaticResource CustomApplicationTextBrush}" 
+							Html="{Binding CurrentABOUTUS_InfoHtmlControl}"/>
+					</ScrollViewer>
+            </phone:PanoramaItem>
+        </phone:Panorama>
+    </Grid>
+	
+</phone:PhoneApplicationPage>
